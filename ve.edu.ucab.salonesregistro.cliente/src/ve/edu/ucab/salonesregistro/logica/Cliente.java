@@ -1,6 +1,7 @@
 package ve.edu.ucab.salonesregistro.logica;
 
 import ve.edu.ucab.salonesregistro.presentacion.ControlPresentacion;
+import ve.edu.ucab.salonesregistro.presentacion.LookAndFeel;
 
 /**
  * Clase main de incio para el cliente
@@ -13,7 +14,8 @@ public class Cliente {
      * @param args argumentos a pasar en caso de ser necesario
      */
     public static void main(String[] args) {
-       ControlPresentacion control = new ControlPresentacion();
-       control.InicioSistema();
+        new LookAndFeel();
+        ControlPresentacion control = new ControlPresentacion();
+        control.InicioSistema();
     }
 }
