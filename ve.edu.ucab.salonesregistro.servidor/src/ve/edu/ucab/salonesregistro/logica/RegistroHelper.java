@@ -76,6 +76,7 @@ public class RegistroHelper {
             Integer miNumeroVersion = miVersion.obtenerNumeroVersion("Salon");
             if (!sync.compararVersiones(miNumeroVersion)) {
                 Integer numeroVerReplica = sync.versionSalones();
+                System.out.println(numeroVerReplica);
                 if (miNumeroVersion > numeroVerReplica) {
                     ArrayList<Salon> lista = rg.todosLosSalones();
                     sync.sincronizarSalones(lista, miNumeroVersion);
