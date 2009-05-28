@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : ReservaXML.xml
+    Created on : 13 de mayo de 2009, 5:08
+    Author     : gerardobarcia
+    Description:
+        Repositorio de personas que manejaran la aplicacion
+-->
+
+<personas>
+    <persona>
+        <id>1</id>
+        <nombre>Gerardo Barcia</nombre>
+        <rol>E</rol>
+    </persona>
+    <persona>
+        <id>2</id>
+        <nombre>Jonathan Trujillo</nombre>
+        <rol>E</rol>
+    </persona>
+    <persona>
+        <id>3</id>
+        <nombre>Rodolfo Campos</nombre>
+        <rol>P</rol>
+    </persona>
+    <persona>
+        <id>4</id>
+        <nombre>Susana Garcia</nombre>
+        <rol>A</rol>
+    </persona>
+</personas>

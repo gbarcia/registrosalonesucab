@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : SalonXML.xml
+    Created on : 13 de mayo de 2009, 5:12
+    Author     : gerardobarcia
+    Description:
+        Repositorio de facultades de la aplicacion
+-->
+<salones>
+    <salon>
+        <id>1</id>
+        <capacidad>50</capacidad>
+        <aire>true</aire>
+        <video>false</video>
+        <pc>false</pc>
+    </salon>
+    <salon>
+        <id>2</id>
+        <capacidad>30</capacidad>
+        <aire>false</aire>
+        <video>false</video>
+        <pc>false</pc>
+    </salon>
+    <salon>
+        <id>3</id>
+        <capacidad>20</capacidad>
+        <aire>true</aire>
+        <video>true</video>
+        <pc>true</pc>
+    </salon>
+    <salon>
+        <id>4</id>
+        <capacidad>100</capacidad>
+        <aire>false</aire>
+        <video>true</video>
+        <pc>true</pc>
+    </salon>
+    <salon>
+        <id>5</id>
+        <capacidad>15</capacidad>
+        <aire>true</aire>
+        <video>true</video>
+        <pc>true</pc>
+    </salon>
+    <salon>
+        <id>6</id>
+        <capacidad>150</capacidad>
+        <aire>true</aire>
+        <video>true</video>
+        <pc>true</pc>
+    </salon>
+</salones>
