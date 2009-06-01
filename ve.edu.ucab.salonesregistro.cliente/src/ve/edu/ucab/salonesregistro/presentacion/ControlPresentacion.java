@@ -48,10 +48,12 @@ public class ControlPresentacion {
         this.operaciones = new FachadaLogica();
         resultado = this.operaciones.comprobarLogin(identificador);
         if (resultado) {
-            System.out.println("acceso autorizado"); // aca iria ir al menu principal
+            System.out.println("Acceso autorizado.");
+            this.ventanaLogin.setVisible(false);
+            this.ventanaOperaciones = new VentanaOperaciones();
         } else {
             if (operaciones.isInterfazEnlazada()) {
-                JOptionPane.showMessageDialog(null, "acceso no autorizado", "Error",
+                JOptionPane.showMessageDialog(null, "Acceso denegado.", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
         }

@@ -30,7 +30,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     public VentanaOperaciones() {
         initComponents();
         this.popularTabla();
-//        this.jTextFieldPersona.setText(Integer.toString(claveUsuario));
+//        this.jTextFieldPersona.setText(Integer.toString(identificador));
     }
 
     /** This method is called from within the constructor to
@@ -81,9 +81,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Reservas");
         setResizable(false);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Bienvenido al Sistema de Reserva"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Sistema de Reserva"));
 
         panelSeleccion.setBorder(javax.swing.BorderFactory.createTitledBorder("Salón Seleccionado"));
 
