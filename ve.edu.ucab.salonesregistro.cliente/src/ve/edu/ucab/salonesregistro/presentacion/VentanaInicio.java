@@ -141,7 +141,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nombreUsuario = this.jnombre.getText();
         String claveUsuario = this.jclave.getText();
-        this.control.comprobarValidez(nombreUsuario, claveUsuario);
+        this.control.comprobarValidez(nombreUsuario, claveUsuario, this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

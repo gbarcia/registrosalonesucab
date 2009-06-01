@@ -42,15 +42,16 @@ public class ControlPresentacion {
      * @param nombre nombre del usuario
      * @param clave clave del usuario
      */
-    public void comprobarValidez(String nombre, String clave) {
+    public void comprobarValidez(String nombre, String clave, VentanaInicio ven) {
         boolean resultado = false;
         Integer identificador = Integer.parseInt(clave);
         this.operaciones = new FachadaLogica();
         resultado = this.operaciones.comprobarLogin(identificador);
         if (resultado) {
             System.out.println("Acceso autorizado.");
-            this.ventanaLogin.setVisible(false);
+            ven.setVisible(false);
             this.ventanaOperaciones = new VentanaOperaciones();
+            this.ventanaOperaciones.setVisible(true);
         } else {
             if (operaciones.isInterfazEnlazada()) {
                 JOptionPane.showMessageDialog(null, "Acceso denegado.", "Error",
