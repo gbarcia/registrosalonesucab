@@ -8,16 +8,17 @@
  *
  * Created on 25-may-2009, 21:17:47
  */
-
 package ve.edu.ucab.salonesregistro.presentacion;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author gerardobarcia
  */
 public class VentanaInicio extends javax.swing.JFrame {
-    private static final long serialVersionUID = -8920975132365422170L;
 
+    private static final long serialVersionUID = -8920975132365422170L;
     private ControlPresentacion control = new ControlPresentacion();
 
     /** Creates new form VentanaInicio */
@@ -139,16 +140,19 @@ public class VentanaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nombreUsuario = this.jnombre.getText();
-        String claveUsuario = this.jclave.getText();
-        this.control.comprobarValidez(nombreUsuario, claveUsuario, this);
+        if (this.validar()) {
+            String nombreUsuario = this.jnombre.getText();
+            String claveUsuario = this.jclave.getText();
+            this.control.comprobarValidez(nombreUsuario, claveUsuario, this);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new VentanaInicio().setVisible(true);
             }
@@ -166,4 +170,24 @@ public class VentanaInicio extends javax.swing.JFrame {
     private javax.swing.JTextField jnombre;
     // End of variables declaration//GEN-END:variables
 
+    private boolean validar() {
+        if (this.jnombre.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar su nombre de usuario.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (this.jclave.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para su clave.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (!this.control.validarInt(this.jclave.getText())) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para su clave.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

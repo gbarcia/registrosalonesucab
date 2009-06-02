@@ -65,7 +65,10 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="panelReserva" min="-2" max="-2" attributes="1"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel5" max="32767" attributes="1"/>
+                      <Component id="panelReserva" alignment="0" min="-2" max="-2" attributes="1"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -73,8 +76,16 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel1" linkSize="6" min="-2" max="-2" attributes="1"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jPanel1" linkSize="6" min="-2" max="-2" attributes="1"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="panelReserva" alignment="0" min="-2" max="-2" attributes="1"/>
                       <Component id="panelSeleccion" linkSize="6" alignment="0" max="32767" attributes="1"/>
@@ -409,10 +420,10 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldSalon3" alignment="0" pref="130" max="32767" attributes="1"/>
-                                  <Component id="jTextFieldPersona" alignment="0" pref="130" max="32767" attributes="1"/>
-                                  <Component id="jTextFieldReserva" alignment="0" pref="130" max="32767" attributes="0"/>
-                                  <Component id="jDateChooser" alignment="1" pref="130" max="32767" attributes="1"/>
+                                  <Component id="jTextFieldSalon3" alignment="0" pref="142" max="32767" attributes="1"/>
+                                  <Component id="jTextFieldPersona" alignment="0" pref="142" max="32767" attributes="1"/>
+                                  <Component id="jTextFieldReserva" alignment="0" pref="142" max="32767" attributes="0"/>
+                                  <Component id="jDateChooser" alignment="1" pref="142" max="32767" attributes="1"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -479,6 +490,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldPersona">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldReserva">
             </Component>
@@ -567,6 +581,54 @@
                   <Events>
                     <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseReleased"/>
                   </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Informaci&#xf3;n"/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" pref="284" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jScrollPane2" pref="264" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="Universidad Cat&#xf3;lica Andres Bello&#xa;Facultad de Ingenier&#xed;a&#xa;Escuela de Inform&#xe1;tica&#xa;Proyecto elaborado para la c&#xe1;tedra de &#xa;Sistemas Distribuidos por:&#xa;&#xa;   - Gerardo Barcia&#xa;   - Jonathan Trujillo&#xa;&#xa;Caracas, junio de 2009&#xa;"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

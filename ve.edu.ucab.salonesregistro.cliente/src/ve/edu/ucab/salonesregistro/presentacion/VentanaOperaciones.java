@@ -25,12 +25,20 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
     private static final long serialVersionUID = -7077206333002700022L;
     private ControlPresentacion control = new ControlPresentacion();
+    private String ultimaModificacion = "";
 
     /** Creates new form VentanaMenu */
     public VentanaOperaciones() {
         initComponents();
         this.popularTabla();
-//        this.jTextFieldPersona.setText(Integer.toString(identificador));
+        this.jDateChooser.setDate(new Date());
+    }
+
+    public VentanaOperaciones(Integer identificador) {
+        initComponents();
+        this.popularTabla();
+        this.jTextFieldPersona.setText(Integer.toString(identificador));
+        this.jDateChooser.setDate(new Date());
     }
 
     /** This method is called from within the constructor to
@@ -79,6 +87,9 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Reservas");
@@ -289,6 +300,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
         jTextFieldSalon3.setEditable(false);
 
+        jTextFieldPersona.setEditable(false);
+
         jButtonAgregarReserva.setText("Agregar");
         jButtonAgregarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,10 +333,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             .add(jLabel12))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(panelReservaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jTextFieldSalon3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .add(jTextFieldPersona, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .add(jTextFieldReserva, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jDateChooser, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))
+                            .add(jTextFieldSalon3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .add(jTextFieldPersona, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .add(jTextFieldReserva, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jDateChooser, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, panelReservaLayout.createSequentialGroup()
                         .add(jButtonLimpiarReserva, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
@@ -395,6 +408,30 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Información"));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setEditable(false);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Universidad Católica Andres Bello\nFacultad de Ingeniería\nEscuela de Informática\nProyecto elaborado para la cátedra de \nSistemas Distribuidos por:\n\n   - Gerardo Barcia\n   - Jonathan Trujillo\n\nCaracas, junio de 2009\n");
+        jScrollPane2.setViewportView(jTextArea1);
+
+        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel5Layout.createSequentialGroup()
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -408,14 +445,21 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .add(18, 18, 18)
                         .add(panelAgregar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(18, 18, 18)
-                .add(panelReserva, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(panelReserva, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
+                        .add(jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(panelReserva, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panelSeleccion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -452,65 +496,73 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseReleased
 
     private void jButtonActualizarSalonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarSalonActionPerformed
-        int idSalon = Integer.parseInt(this.jTextFieldSalon.getText());
-        int capacidad = Integer.parseInt(this.jTextFieldCapacidad.getText());
-        boolean vb = this.jCheckBoxVB.isSelected();
-        boolean aa = this.jCheckBoxAA.isSelected();
-        boolean co = this.jCheckBoxComputador.isSelected();
-        boolean resultado = this.control.modificarSalon(idSalon, capacidad, vb, aa, co);
-        if (resultado) {
-            this.popularTabla();
-            JOptionPane.showMessageDialog(null, "Salón modificado con éxito.", "Informacion",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
-                    JOptionPane.ERROR_MESSAGE);
+        if (this.validarEditar()) {
+            int idSalon = Integer.parseInt(this.jTextFieldSalon.getText());
+            int capacidad = Integer.parseInt(this.jTextFieldCapacidad.getText());
+            boolean vb = this.jCheckBoxVB.isSelected();
+            boolean aa = this.jCheckBoxAA.isSelected();
+            boolean co = this.jCheckBoxComputador.isSelected();
+            boolean resultado = this.control.modificarSalon(idSalon, capacidad, vb, aa, co);
+            if (resultado) {
+                this.popularTabla();
+                JOptionPane.showMessageDialog(null, "Salón modificado con éxito.", "Informacion",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButtonActualizarSalonActionPerformed
 
     private void jButtonEliminarSalonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarSalonActionPerformed
-        int idSalon = Integer.parseInt(this.jTextFieldSalon.getText());
-        boolean resultado = this.control.eliminarSalon(idSalon);
-        if (resultado) {
-            this.popularTabla();
-            JOptionPane.showMessageDialog(null, "Salón eliminado con éxito.", "Información",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
-                    JOptionPane.ERROR_MESSAGE);
+        if (this.validarEliminar()) {
+            int idSalon = Integer.parseInt(this.jTextFieldSalon.getText());
+            boolean resultado = this.control.eliminarSalon(idSalon);
+            if (resultado) {
+                this.popularTabla();
+                JOptionPane.showMessageDialog(null, "Salón eliminado con éxito.", "Información",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButtonEliminarSalonActionPerformed
 
     private void jButtonAgregarSalonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarSalonActionPerformed
-        int idSalon = Integer.parseInt(this.jTextFieldSalon2.getText());
-        int capacidad = Integer.parseInt(this.jTextFieldCapacidad2.getText());
-        boolean vb = this.jCheckBoxVB2.isSelected();
-        boolean aa = this.jCheckBoxAA2.isSelected();
-        boolean co = this.jCheckBoxComputador2.isSelected();
-        boolean resultado = this.control.agregarSalon(idSalon, capacidad, vb, aa, co);
-        if (resultado) {
-            this.popularTabla();
-            JOptionPane.showMessageDialog(null, "Salón agregado con éxito.", "Información",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
-                    JOptionPane.ERROR_MESSAGE);
+        if (this.validarAgregar()) {
+            int idSalon = Integer.parseInt(this.jTextFieldSalon2.getText());
+            int capacidad = Integer.parseInt(this.jTextFieldCapacidad2.getText());
+            boolean vb = this.jCheckBoxVB2.isSelected();
+            boolean aa = this.jCheckBoxAA2.isSelected();
+            boolean co = this.jCheckBoxComputador2.isSelected();
+            boolean resultado = this.control.agregarSalon(idSalon, capacidad, vb, aa, co);
+            if (resultado) {
+                this.popularTabla();
+                JOptionPane.showMessageDialog(null, "Salón agregado con éxito.", "Información",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButtonAgregarSalonActionPerformed
 
     private void jButtonAgregarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarReservaActionPerformed
-        int idSalon = Integer.parseInt(this.jTextFieldSalon3.getText());
-        int idReserva = Integer.parseInt(this.jTextFieldReserva.getText());
-        int idPersona = Integer.parseInt(this.jTextFieldPersona.getText());
-        Date fecha = this.jDateChooser.getDate();
-        boolean resultado = this.control.agregarReserva(idReserva, idSalon, idPersona, fecha);
-        if (resultado) {
-            this.popularTabla();
-            JOptionPane.showMessageDialog(null, "Reserva agregada con éxito.", "Información",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
-                    JOptionPane.ERROR_MESSAGE);
+        if (validarReservar()) {
+            int idSalon = Integer.parseInt(this.jTextFieldSalon3.getText());
+            int idReserva = Integer.parseInt(this.jTextFieldReserva.getText());
+            int idPersona = Integer.parseInt(this.jTextFieldPersona.getText());
+            Date fecha = this.jDateChooser.getDate();
+            boolean resultado = this.control.agregarReserva(idReserva, idSalon, idPersona, fecha);
+            if (resultado) {
+                this.popularTabla();
+                JOptionPane.showMessageDialog(null, "Reserva agregada con éxito.", "Información",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Se presentó un error al realizar la operación.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButtonAgregarReservaActionPerformed
 
@@ -566,8 +618,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldCapacidad;
     private javax.swing.JTextField jTextFieldCapacidad2;
     private javax.swing.JTextField jTextFieldPersona;
@@ -619,6 +674,85 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             this.jCheckBoxVB.setSelected(true);
         } else {
             this.jCheckBoxVB.setSelected(false);
+        }
+    }
+
+    private boolean validarEditar() {
+        if (this.jTextFieldSalon.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe seleccionar un salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (this.jTextFieldCapacidad.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar la capacidad del salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (!this.control.validarInt(this.jTextFieldCapacidad.getText())) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para la capacidad del salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private boolean validarEliminar() {
+        if (this.jTextFieldSalon.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe seleccionar un salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private boolean validarAgregar() {
+        if (this.jTextFieldSalon2.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (!this.control.validarInt(this.jTextFieldSalon2.getText())) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para el salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (this.jTextFieldCapacidad2.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar la capacidad del salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (!this.control.validarInt(this.jTextFieldCapacidad2.getText())) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para la capacidad del salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private boolean validarReservar() {
+        if (this.jTextFieldSalon3.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe seleccionar un salón.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (this.jTextFieldReserva.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar la reserva.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if (!this.control.validarInt(this.jTextFieldReserva.getText())) {
+            JOptionPane.showMessageDialog(null, "Para realizar esta operación, " +
+                    "debe indicar un valor numérico para la reserva.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
         }
     }
 }
