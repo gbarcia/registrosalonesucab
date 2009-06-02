@@ -84,7 +84,7 @@ public class FachadaLogica {
 
     /**
      * firma para agregar un nuevo salon en el sistema
-     * @param Salon objeto salon a agregar
+     * @param s objeto salon a agregar
      * @return valor booleano con la condicion de exito
      */
     public boolean registroNuevoSalon(Salon s) {
@@ -95,7 +95,7 @@ public class FachadaLogica {
 
     /**
      * firma para actualizar un salon determinado
-     * @param Salon objeto salon a actualizar
+     * @param s objeto salon a actualizar
      * @return valor booleano con la condicion de exito
      */
     public boolean actualizarRegistroSalon(Salon s) {
