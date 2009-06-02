@@ -19,3 +19,8 @@ public class Cliente {
         control.InicioSistema();
     }
 }
+/**
+ * Frase estelelar del Proyecto
+ * "La suerte es el residuo del diseño"
+ *  Branch Rickey
+ */
