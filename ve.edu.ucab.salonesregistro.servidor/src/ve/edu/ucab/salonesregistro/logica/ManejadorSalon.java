@@ -174,7 +174,7 @@ public class ManejadorSalon implements Serializable {
      * firma para cambiar el documento y reempleazarlo por otro para fine de
      * operaciones de intercambio entre servidores
      * @param lista lista de salones nueva
-     * @param la version del documento actual
+     * @param version la version del documento actual
      * @return valor booleano con la condicion de exito
      */
     public boolean cambiarDocumento(ArrayList<Salon> lista, Integer version) {
