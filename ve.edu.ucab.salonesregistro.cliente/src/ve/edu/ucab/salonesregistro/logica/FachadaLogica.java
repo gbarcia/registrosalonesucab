@@ -84,7 +84,7 @@ public class FachadaLogica {
 
     /**
      * firma para agregar un nuevo salon en el sistema
-     * @param salon objeto salon a agregar
+     * @param Salon objeto salon a agregar
      * @return valor booleano con la condicion de exito
      */
     public boolean registroNuevoSalon(Salon s) {
@@ -95,7 +95,7 @@ public class FachadaLogica {
 
     /**
      * firma para actualizar un salon determinado
-     * @param salon objeto salon a actualizar
+     * @param Salon objeto salon a actualizar
      * @return valor booleano con la condicion de exito
      */
     public boolean actualizarRegistroSalon(Salon s) {
@@ -105,7 +105,7 @@ public class FachadaLogica {
 
     /**
      * firma para buscar un salon en el sistema
-     * @param idSalon indentificador del salon a buscar
+     * @param id indentificador del salon a buscar
      * @return null si no existe y el objeto salon buscado en dado caso que exista
      */
     public Salon buscarSalon(Integer id) {
@@ -115,7 +115,7 @@ public class FachadaLogica {
 
     /**
      * firma para eliminar un salon del sistema
-     * @param idSalon indentificador del salon a eliminar
+     * @param id indentificador del salon a eliminar
      * @return valor booleano con la condicion de resultado
      */
     public boolean eliminarSalon(Integer id) {
