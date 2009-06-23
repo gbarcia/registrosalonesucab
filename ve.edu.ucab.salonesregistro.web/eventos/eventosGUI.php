@@ -74,4 +74,49 @@ function mostrarListaSalones () {
     return $objResponse;
 }
 
+function obtenerTodasLasReservas () {
+    $clienteReservas = new ClienteReservas();
+    $lista = $clienteReservas->listaReservas();
+    $resultado = '<table class="scrollTable" cellspacing="0">';
+    $resultado.= '<thead>';
+    $resultado.= '<tr>';
+    $resultado.= '<th>IDENTIFICADOR</th>';
+    $resultado.= '<th>FECHA</th>';
+    $resultado.= '<th>ESTADO</th>';
+    $resultado.= '<th>PERSONA QUE RESERVO</th>';
+    $resultado.= '<th>SALON RESERVADO</th>';
+    $resultado.= '</tr>';
+    $resultado.= '</thead>';
+    $color = false;
+    foreach ($lista as $reserva) {
+        if ($color){
+            $resultado.= '<tr class="r0">';
+        } else {
+            $resultado.= '<tr class="r1">';
+        }
+        $resultado.= '<td>' . $reserva->id. '</td>';
+        $resultado.= '<td>' . $reserva->fecha. '</td>';
+        if ($reserva->status == true) {
+            $edo = 'ACTIVO';
+        }
+        else {
+            $edo = 'CANCELADO';
+        }
+        $resultado.= '<td>' . $edo. '</td>';
+        $resultado.= '<td>' . $reserva->persona->id. '</td>';
+        $resultado.= '<td>' . $reserva->salonReservado->id. '</td>';
+        $resultado.= '</tr>';
+        $color = !$color;
+    }
+    $resultado.= '</table>';
+    return $resultado;
+}
+
+function mostrarListaReservas () {
+    $resultado = obtenerTodasLasReservas();
+    $objResponse = new xajaxResponse();
+    $objResponse->addAssign("reservas", "innerHTML", $resultado);
+    return $objResponse;
+}
+
 ?>
