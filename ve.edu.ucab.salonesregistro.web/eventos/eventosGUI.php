@@ -234,5 +234,4 @@ function procesar ($datos) {
     $objResponse->addAssign("reservas", "innerHTML", $actualizarTablaPrincipalRespuesta);
     return $objResponse;
 }
-
 ?>
