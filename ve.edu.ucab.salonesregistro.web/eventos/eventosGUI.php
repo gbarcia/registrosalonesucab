@@ -97,10 +97,10 @@ function obtenerTodasLasReservas () {
         $resultado.= '<td>' . $reserva->id. '</td>';
         $resultado.= '<td>' . $reserva->fecha. '</td>';
         if ($reserva->status == true) {
-            $edo = 'ACTIVO';
+            $edo = 'ACTIVA';
         }
         else {
-            $edo = 'CANCELADO';
+            $edo = 'CANCELADA';
         }
         $resultado.= '<td>' . $edo. '</td>';
         $resultado.= '<td>' . $reserva->persona->id. '</td>';
