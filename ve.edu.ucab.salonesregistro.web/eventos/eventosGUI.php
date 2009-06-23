@@ -4,7 +4,12 @@ require_once$_SERVER['DOCUMENT_ROOT'] . '/ve.edu.ucab.salonesregistro.web/ve.edu
 require_once$_SERVER['DOCUMENT_ROOT'] . '/ve.edu.ucab.salonesregistro.web/ve.edu.ucab.salonesregistro.dominio/Reserva.php';
 require_once$_SERVER['DOCUMENT_ROOT'] . '/ve.edu.ucab.salonesregistro.web/ve.edu.ucab.salonesregistro.dominio/Salon.php';
 require_once$_SERVER['DOCUMENT_ROOT'] . '/ve.edu.ucab.salonesregistro.web/ve.edu.ucab.salonesregistro.web.serviciotecnico/ve.edu.ucab.salonesregistro.web.serviciotecnico.ws/ClienteReservas.php';
-
+/**
+ * firma para verificar el acceso a la aplicacion
+ * @param <Array> $datos datos del formulario
+ * @return <RespuestaXajax> respuesta de objeto xjax. Si el valor es correcto
+ * se envia a la url del home, en caso contrario se despliega un mensaje de error
+ */
 function accesoSistema ($datos) {
     $objResponse = new xajaxResponse();
     if ($datos['clave'] == '1234') {
@@ -16,7 +21,11 @@ function accesoSistema ($datos) {
     }
     return $objResponse;
 }
-
+/**
+ * firma para desplegar la tabla que contiene la informacion de todos los salones
+ * @return <String> codigo HTML para el despliegue de la tabla con la informacion
+ * de todos los salones
+ */
 function obtenerTodosLosSalones () {
     $clienteReservas = new ClienteReservas();
     $lista = $clienteReservas->listaSalones();
@@ -46,14 +55,14 @@ function obtenerTodosLosSalones () {
             $aire = 'NO';
         }
         $resultado.= '<td>' . $aire . '</td>';
-           if ($salon->videoBean == true) {
+        if ($salon->videoBean == true) {
             $video = 'SI';
         }
         else {
             $video = 'NO';
         }
         $resultado.= '<td>' . $video. '</td>';
-           if ($salon->computador == true) {
+        if ($salon->computador == true) {
             $comp = 'SI';
         }
         else {
@@ -66,14 +75,22 @@ function obtenerTodosLosSalones () {
     $resultado.= '</table>';
     return $resultado;
 }
-
+/**
+ * firma para desplegar el html que dibuja la tabla con la informacion
+ * de todos los salones
+ * @return <RespuestaXajax> respuesta con el div donde se desplegara la tabla
+ */
 function mostrarListaSalones () {
     $resultado = obtenerTodosLosSalones();
     $objResponse = new xajaxResponse();
     $objResponse->addAssign("salones", "innerHTML", $resultado);
     return $objResponse;
 }
-
+/**
+ * firma para desplegar la tabla que contiene la informacion de todas las reservas
+ * @return <String> codigo HTML para el despliegue de la tabla con la informacion
+ * de todas las reservas
+ */
 function obtenerTodasLasReservas () {
     $clienteReservas = new ClienteReservas();
     $lista = $clienteReservas->listaReservas();
@@ -111,7 +128,11 @@ function obtenerTodasLasReservas () {
     $resultado.= '</table>';
     return $resultado;
 }
-
+/**
+ * firma para desplegar el html que dibuja la tabla con la informacion
+ * de todos las reservas
+ * @return <RespuestaXajax> respuesta con el div donde se desplegara la tabla
+ */
 function mostrarListaReservas () {
     $resultado = obtenerTodasLasReservas();
     $objResponse = new xajaxResponse();
