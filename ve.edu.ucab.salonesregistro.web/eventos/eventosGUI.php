@@ -217,20 +217,16 @@ function procesar ($datos) {
     $resultado = $control->realizarReserva($r);
     if ($resultado){
         $respuesta .= '<div class="exito">
-                          <div class="textoMensaje">
-                         Su reserva se ha efectado con exito
-                          </div>
-                          </div>';
+                       <div class="textoMensaje">
+                       Su reserva se ha efectado con exito</div></div>';
     }
     else {
         $respuesta .= '<div class="error">
-                          <div class="textoMensaje">
-                          No se pudo completar la operacion. Intente de nuevo
-                          </div>
-                          </div>';
+                       <div class="textoMensaje">
+                       No se pudo completar la operacion. Intente de nuevo</div></div>';
     }
     $objResponse->addAssign("mensaje", "innerHTML", $respuesta);
-    $actualizarTablaPrincipalRespuesta = mostrarListaReservas();
+    $actualizarTablaPrincipalRespuesta = obtenerTodasLasReservas();
     $objResponse->addAssign("reservas", "innerHTML", $actualizarTablaPrincipalRespuesta);
     return $objResponse;
 }
