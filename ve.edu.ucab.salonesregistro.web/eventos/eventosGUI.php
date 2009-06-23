@@ -139,5 +139,64 @@ function mostrarListaReservas () {
     $objResponse->addAssign("reservas", "innerHTML", $resultado);
     return $objResponse;
 }
+/**
+ * firma para generar el codigo html que genere un formulario para realizar
+ * reservas
+ * @return <String> codigo HTML con el formulario
+ */
+function generarFormularioNuevaReserva () {
+    $formulario ='<form id="formNuevaReserva">
+   <table class="formTable" cellspacing="0">
+   <tr>
+      <thead>
+        <td colspan="2">
+        <div class="tituloBlanco1">
+            NUEVA RESERVA
+        </div>
+        </td>
+        </thead>
+    </tr>
+    <tr class="r1">
+      <td colspan="2">Todos los campos son requeridos</td>
+      </tr>
+    <tr class="r0">
+      <td>Identificador:</td>
+      <td><label>
+        <input type="text" name="id" id="id" size="30" onkeyup="this.value=this.value.toUpperCase();" />
+      </label></td>
+    </tr>
+    <tr class="r1">
+      <td>Persona id:</td>
+      <td><label>
+        <input type="text" name="per" id="per" onkeyup="this.value=this.value.toUpperCase();" size="30" />
+      </label></td>
+    </tr>
+    <tr class="r0">
+      <td>Salon id:</td>
+      <td><label>
+        <input type="text" name="sal" id="sal" onkeyup="this.value=this.value.toUpperCase();" size="30" />
+      </label></td>
+    </tr>
+    <tr class="r1">
+      <td height="26" colspan="2"><div align="center">
+        <input name="button" type="button" id="button" value="RESERVAR" onclick= "xajax_procesar(xajax.getFormValues(\'formNuevaReserva\'))" />
+      </div></td>
+    </tr>
+  </table>    <label></label></td>
+    </tr>
+</table>
+</form>';
+    return $formulario;
+}
+/**
+ * funcion para desplegar el formulario para una nueva reserva
+ * @return <RespuestaXajax> respuesta xajax para desplegar el form en un div
+ */
+function desplegarFormularioNuevaReserva () {
+    $resultado = generarFormularioNuevaReserva();
+    $objResponse = new xajaxResponse();
+    $objResponse->addAssign("hacerReserva", "innerHTML", $resultado);
+    return $objResponse;
+}
 
 ?>
