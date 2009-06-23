@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : FacultadXML.xml
+    Created on : 17 de mayo de 2009, 22:35
+    Author     : gerardobarcia
+    Description:
+        Repositorio de las facultades y escuelas del sistema
+-->
+
+<facultades>
+    <facultad>
+        <id>1</id>
+        <nombre>Ingenieria</nombre>
+        <escuelas>
+            <escuela>
+                <ide>1</ide>
+                <nombres>Informatica</nombres>
+            </escuela>
+            <escuela>
+                <ide>2</ide>
+                <nombres>Industrial</nombres>
+            </escuela>
+        </escuelas>
+    </facultad>
+</facultades>
