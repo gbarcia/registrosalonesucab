@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://logica.salonesregistro.ucab.edu.ve/" xmlns:tns="http://logica.salonesregistro.ucab.edu.ve/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ParseException" nillable="true" type="tns:parseExceptionBean"/>
+
+  <xs:element name="listaReservas" nillable="true" type="tns:listaReservas"/>
+
+  <xs:element name="listaReservasResponse" nillable="true" type="tns:listaReservasResponse"/>
+
+  <xs:element name="listaSalones" nillable="true" type="tns:listaSalones"/>
+
+  <xs:element name="listaSalonesResponse" nillable="true" type="tns:listaSalonesResponse"/>
+
+  <xs:element name="realizarReserva" nillable="true" type="tns:realizarReserva"/>
+
+  <xs:element name="realizarReservaResponse" nillable="true" type="tns:realizarReservaResponse"/>
+
+  <xs:complexType name="listaReservas">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="listaReservasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:reserva" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reserva">
+    <xs:sequence>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="persona" type="tns:personaAutorizada" minOccurs="0"/>
+      <xs:element name="salonReservado" type="tns:salon" minOccurs="0"/>
+      <xs:element name="status" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personaAutorizada">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="nombreCompleto" type="xs:string" minOccurs="0"/>
+      <xs:element name="rol" type="xs:unsignedShort"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salon">
+    <xs:sequence>
+      <xs:element name="aireAcondicionado" type="xs:boolean"/>
+      <xs:element name="capacidad" type="xs:int"/>
+      <xs:element name="computador" type="xs:boolean"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="videoBean" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="realizarReserva">
+    <xs:sequence>
+      <xs:element name="reserva" type="tns:reserva" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="realizarReservaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="parseExceptionBean">
+    <xs:sequence>
+      <xs:element name="errorOffset" type="xs:int"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listaSalones">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="listaSalonesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:salon" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
