@@ -1,3 +1,4 @@
+
 <reservas>
     <reserva>
         <id>1</id>
@@ -13,4 +14,4 @@
         <idPersona>2</idPersona>
         <idSalon>2</idSalon>
     </reserva>
-<reserva><id>200</id><fecha>Sun Dec 12 00:00:00 GMT-00:04 1999</fecha><estatus>true</estatus><idPersona>1</idPersona><idSalon>1</idSalon></reserva><reserva><id>200</id><fecha>Sun Dec 12 00:00:00 GMT-00:04 1999</fecha><estatus>true</estatus><idPersona>1</idPersona><idSalon>1</idSalon></reserva></reservas>
+</reservas>
