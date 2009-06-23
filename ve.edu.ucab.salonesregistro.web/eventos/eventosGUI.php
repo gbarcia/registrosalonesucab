@@ -198,5 +198,41 @@ function desplegarFormularioNuevaReserva () {
     $objResponse->addAssign("hacerReserva", "innerHTML", $resultado);
     return $objResponse;
 }
+/**
+ * funcion para procesar una reserva
+ * @param <Array> $datos los datos recogidos del formulario
+ * @return <RespuestaXajax> respuesta xajax desplegando en un div un mensaje
+ * de exito o fallo en la operacion
+ */
+function procesar ($datos) {
+    $objResponse = new xajaxResponse();
+    $respuesta = "";
+    $control = new ClienteReservas();
+    $r = new Reserva();
+    $r->id = $datos['id'];
+    $r->fecha = date ("d") ."-".date ("m"). "-".date ("Y");
+    $r->status = true;
+    $r->persona->id = $datos['per'];
+    $r->salonReservado->id = $datos['sal'];
+    $resultado = $control->realizarReserva($r);
+    if ($resultado){
+        $respuesta .= '<div class="exito">
+                          <div class="textoMensaje">
+                         Su reserva se ha efectado con exito
+                          </div>
+                          </div>';
+    }
+    else {
+        $respuesta .= '<div class="error">
+                          <div class="textoMensaje">
+                          No se pudo completar la operacion. Intente de nuevo
+                          </div>
+                          </div>';
+    }
+    $objResponse->addAssign("mensaje", "innerHTML", $respuesta);
+    $actualizarTablaPrincipalRespuesta = mostrarListaReservas();
+    $objResponse->addAssign("reservas", "innerHTML", $actualizarTablaPrincipalRespuesta);
+    return $objResponse;
+}
 
 ?>
