@@ -48,24 +48,24 @@ function obtenerTodosLosSalones () {
         }
         $resultado.= '<td>' . $salon->id. '</td>';
         $resultado.= '<td>' . $salon->capacidad. '</td>';
-        if ($salon->aireAcondicionado == true) {
+        if ($salon->aireAcondicionado == 'true') {
             $aire = 'SI';
         }
-        else {
+        if ($salon->aireAcondicionado == 'false'){
             $aire = 'NO';
         }
         $resultado.= '<td>' . $aire . '</td>';
-        if ($salon->videoBean == true) {
+        if ($salon->videoBean == 'true') {
             $video = 'SI';
         }
-        else {
+        if ($salon->videoBean == 'false') {
             $video = 'NO';
         }
         $resultado.= '<td>' . $video. '</td>';
-        if ($salon->computador == true) {
+        if ($salon->computador == 'true') {
             $comp = 'SI';
         }
-        else {
+        if ($salon->computador == 'false') {
             $comp = 'NO';
         }
         $resultado.= '<td>' . $comp. '</td>';
